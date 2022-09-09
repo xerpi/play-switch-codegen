@@ -353,7 +353,7 @@ void CJitter::DivS()
 	m_shadow.Push(tempSym);
 }
 
-void CJitter::JumpTo(void* func)
+void CJitter::JumpTo(const void* func)
 {
 	STATEMENT statement;
 	statement.src1 = MakeSymbolRef(MakeConstantPtr(reinterpret_cast<uintptr_t>(func)));
@@ -361,7 +361,7 @@ void CJitter::JumpTo(void* func)
 	InsertStatement(statement);
 }
 
-void CJitter::JumpToDynamic(void* func)
+void CJitter::JumpToDynamic(const void* func)
 {
 	STATEMENT statement;
 	statement.src1 = MakeSymbolRef(MakeConstantPtr(reinterpret_cast<uintptr_t>(func)));

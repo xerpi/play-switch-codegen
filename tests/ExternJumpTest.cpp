@@ -46,7 +46,7 @@ void CExternJumpTest::Compile(Jitter::CJitter& jitter)
 			jitter.PushCst(TEST_RESULT_3);
 			jitter.PullRel(offsetof(CONTEXT, result3));
 
-			jitter.JumpToDynamic(m_targetFunction.GetCode());
+			jitter.JumpToDynamic(m_targetFunction.GetCodeRx());
 		}
 		jitter.End();
 
@@ -71,7 +71,7 @@ void CExternJumpTest::Compile(Jitter::CJitter& jitter)
 			jitter.PushRel(offsetof(CONTEXT, result1));
 			jitter.Call(reinterpret_cast<void*>(&DumbFunctionCall), 1, Jitter::CJitter::RETURN_VALUE_NONE);
 
-			jitter.JumpTo(m_dynamicTargetFunction.GetCode());
+			jitter.JumpTo(m_dynamicTargetFunction.GetCodeRx());
 		}
 		jitter.End();
 

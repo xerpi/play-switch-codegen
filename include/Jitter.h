@@ -78,8 +78,8 @@ namespace Jitter
 		void Cmp(CONDITION);
 		void Div();
 		void DivS();
-		void JumpTo(void*);
-		void JumpToDynamic(void*);
+		void JumpTo(const void*);
+		void JumpToDynamic(const void*);
 		void Lookup(uint32*);
 		void Lzc();
 		void Mult();

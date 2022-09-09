@@ -23,7 +23,8 @@ public:
 	CMemoryFunction& operator=(CMemoryFunction&&);
 	void operator()(void*);
 
-	void* GetCode() const;
+	const void* GetCodeRx() const;
+	void* GetCodeRw() const;
 	size_t GetSize() const;
 
 	void BeginModify();
@@ -35,7 +36,8 @@ private:
 	void ClearCache();
 	void Reset();
 
-	void* m_code;
+	void* m_code_rx;
+	void* m_code_rw;
 	size_t m_size;
 #if defined(__EMSCRIPTEN__)
 	emscripten::val m_wasmModule;
